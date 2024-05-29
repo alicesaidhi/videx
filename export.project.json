@@ -1,0 +1,26 @@
+{
+  "name": "videx",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      
+      "packages": {
+        "videx": {
+          "$path": "src"
+        },
+        
+        "$path": "packages"
+      },
+
+      "dev_packages": {
+        "$path": "dev_packages"
+      },
+
+      "jest.config": {
+        "$path": "tests/jest.config.luau"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+diff --git a/src/runTest.lua b/src/runTest.lua
+index e1f08a4..7c4e4e5 100644
+--- a/src/runTest.lua
++++ b/src/runTest.lua
+@@ -151,8 +151,9 @@ local function runTestInternal(
+ 				local environmentModule = script.Parent
+ 					and script.Parent.Parent
+ 					and script.Parent.Parent.Parent
++					and script.Parent.Parent.Parent.Parent
+ 					-- and script.Parent.Parent.Parent
+-					and script.Parent.Parent.Parent:FindFirstChild(testEnvironment, true)
++					and script.Parent.Parent.Parent.Parent:FindFirstChild(testEnvironment, true)
+ 				if environmentModule and environmentModule.ClassName == "Folder" then
+ 					environmentModule = environmentModule:FindFirstChild("src")
+ 				end

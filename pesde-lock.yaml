@@ -1,0 +1,1050 @@
+name: alicesaidhi/videx
+specifiers:
+  wally#centau/vide:
+    0.2.0:
+    - wally: wally#centau/vide
+      version: ^0.2.0
+      index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+    - vide
+  wally#jsdotlua/jest:
+    3.6.1-rc.2:
+    - wally: wally#jsdotlua/jest
+      version: ^3.6.1-rc.2
+      index_url: https://github.com/UpliftGames/wally-index
+      realm: development
+    - jest
+  wally#jsdotlua/jest-globals:
+    3.6.1-rc.2:
+    - wally: wally#jsdotlua/jest-globals
+      version: ^3.6.1-rc.2
+      index_url: https://github.com/UpliftGames/wally-index
+      realm: development
+    - jest_globals
+children:
+  wally#centau/vide:
+    0.2.0:
+      pkg_ref:
+        type: wally
+        name: wally#centau/vide
+        version: 0.2.0
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/boolean:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/boolean
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/number:
+        - 1.2.6
+        - number
+      realm: shared
+  wally#jsdotlua/chalk:
+    0.2.1:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/chalk
+        version: 0.2.1
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/collections:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/collections
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/es7-types:
+        - 1.2.6
+        - es7-types
+        wally#jsdotlua/instance-of:
+        - 1.2.6
+        - instance-of
+      realm: shared
+  wally#jsdotlua/console:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/console
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/collections:
+        - 1.2.6
+        - collections
+      realm: shared
+  wally#jsdotlua/diff-sequences:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/diff-sequences
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/emittery:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/emittery
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/es7-types:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/es7-types
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/expect:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/expect
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-matcher-utils:
+        - 3.6.1-rc.2
+        - jest-matcher-utils
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-snapshot:
+        - 3.6.1-rc.2
+        - jest-snapshot
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/instance-of:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/instance-of
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/jest:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-core:
+        - 3.6.1-rc.2
+        - jest-core
+      realm: shared
+  wally#jsdotlua/jest-circus:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-circus
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/expect:
+        - 3.6.1-rc.2
+        - expect
+        wally#jsdotlua/jest-each:
+        - 3.6.1-rc.2
+        - jest-each
+        wally#jsdotlua/jest-environment:
+        - 3.6.1-rc.2
+        - jest-environment
+        wally#jsdotlua/jest-matcher-utils:
+        - 3.6.1-rc.2
+        - jest-matcher-utils
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-runtime:
+        - 3.6.1-rc.2
+        - jest-runtime
+        wally#jsdotlua/jest-snapshot:
+        - 3.6.1-rc.2
+        - jest-snapshot
+        wally#jsdotlua/jest-test-result:
+        - 3.6.1-rc.2
+        - jest-test-result
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+        wally#jsdotlua/throat:
+        - 3.6.1-rc.2
+        - throat
+      realm: shared
+  wally#jsdotlua/jest-config:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-config
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-each:
+        - 3.6.1-rc.2
+        - jest-each
+        wally#jsdotlua/jest-environment-roblox:
+        - 3.6.1-rc.2
+        - jest-environment-roblox
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/jest-validate:
+        - 3.6.1-rc.2
+        - jest-validate
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-console:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-console
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-each:
+        - 3.6.1-rc.2
+        - jest-each
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-core:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-core
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/emittery:
+        - 3.6.1-rc.2
+        - emittery
+        wally#jsdotlua/jest-config:
+        - 3.6.1-rc.2
+        - jest-config
+        wally#jsdotlua/jest-console:
+        - 3.6.1-rc.2
+        - jest-console
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-reporters:
+        - 3.6.1-rc.2
+        - jest-reporters
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-runner:
+        - 3.6.1-rc.2
+        - jest-runner
+        wally#jsdotlua/jest-runtime:
+        - 3.6.1-rc.2
+        - jest-runtime
+        wally#jsdotlua/jest-snapshot:
+        - 3.6.1-rc.2
+        - jest-snapshot
+        wally#jsdotlua/jest-test-result:
+        - 3.6.1-rc.2
+        - jest-test-result
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-diff:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-diff
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/diff-sequences:
+        - 3.6.1-rc.2
+        - diff-sequences
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+      realm: shared
+  wally#jsdotlua/jest-each:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-each
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+      realm: shared
+  wally#jsdotlua/jest-environment:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-environment
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-fake-timers:
+        - 3.6.1-rc.2
+        - jest-fake-timers
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-environment-roblox:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-environment-roblox
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-environment:
+        - 3.6.1-rc.2
+        - jest-environment
+        wally#jsdotlua/jest-fake-timers:
+        - 3.6.1-rc.2
+        - jest-fake-timers
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-fake-timers:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-fake-timers
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-get-type:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-get-type
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+      realm: shared
+  wally#jsdotlua/jest-globals:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-globals
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/expect:
+        - 3.6.1-rc.2
+        - expect
+        wally#jsdotlua/jest-environment:
+        - 3.6.1-rc.2
+        - jest-environment
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-matcher-utils:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-matcher-utils
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-diff:
+        - 3.6.1-rc.2
+        - jest-diff
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+      realm: shared
+  wally#jsdotlua/jest-message-util:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-message-util
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+      realm: shared
+  wally#jsdotlua/jest-mock:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-mock
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-reporters:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-reporters
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-console:
+        - 3.6.1-rc.2
+        - jest-console
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-test-result:
+        - 3.6.1-rc.2
+        - jest-test-result
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/path:
+        - 3.6.1-rc.2
+        - path
+      realm: shared
+  wally#jsdotlua/jest-roblox-shared:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-roblox-shared
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-runner:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-runner
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/emittery:
+        - 3.6.1-rc.2
+        - emittery
+        wally#jsdotlua/jest-circus:
+        - 3.6.1-rc.2
+        - jest-circus
+        wally#jsdotlua/jest-console:
+        - 3.6.1-rc.2
+        - jest-console
+        wally#jsdotlua/jest-environment:
+        - 3.6.1-rc.2
+        - jest-environment
+        wally#jsdotlua/jest-message-util:
+        - 3.6.1-rc.2
+        - jest-message-util
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-runtime:
+        - 3.6.1-rc.2
+        - jest-runtime
+        wally#jsdotlua/jest-test-result:
+        - 3.6.1-rc.2
+        - jest-test-result
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/jest-util:
+        - 3.6.1-rc.2
+        - jest-util
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+        wally#jsdotlua/throat:
+        - 3.6.1-rc.2
+        - throat
+      realm: shared
+  wally#jsdotlua/jest-runtime:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-runtime
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/emittery:
+        - 3.6.1-rc.2
+        - emittery
+        wally#jsdotlua/expect:
+        - 3.6.1-rc.2
+        - expect
+        wally#jsdotlua/jest-fake-timers:
+        - 3.6.1-rc.2
+        - jest-fake-timers
+        wally#jsdotlua/jest-mock:
+        - 3.6.1-rc.2
+        - jest-mock
+        wally#jsdotlua/jest-snapshot:
+        - 3.6.1-rc.2
+        - jest-snapshot
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-snapshot:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-snapshot
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-diff:
+        - 3.6.1-rc.2
+        - jest-diff
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-matcher-utils:
+        - 3.6.1-rc.2
+        - jest-matcher-utils
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/pretty-format:
+        - 3.6.1-rc.2
+        - pretty-format
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-test-result:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-test-result
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/jest-types:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-types
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+      realm: shared
+  wally#jsdotlua/jest-util:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-util
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/jest-types:
+        - 3.6.1-rc.2
+        - jest-types
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/picomatch:
+        - 0.4.0
+        - picomatch
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/jest-validate:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/jest-validate
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/luau-polyfill:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/luau-polyfill
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/boolean:
+        - 1.2.6
+        - boolean
+        wally#jsdotlua/collections:
+        - 1.2.6
+        - collections
+        wally#jsdotlua/console:
+        - 1.2.6
+        - console
+        wally#jsdotlua/es7-types:
+        - 1.2.6
+        - es7-types
+        wally#jsdotlua/instance-of:
+        - 1.2.6
+        - instance-of
+        wally#jsdotlua/math:
+        - 1.2.6
+        - math
+        wally#jsdotlua/number:
+        - 1.2.6
+        - number
+        wally#jsdotlua/string:
+        - 1.2.6
+        - string
+        wally#jsdotlua/symbol-luau:
+        - 1.0.1
+        - symbol-luau
+        wally#jsdotlua/timers:
+        - 1.2.6
+        - timers
+      realm: shared
+  wally#jsdotlua/luau-regexp:
+    0.2.1:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/luau-regexp
+        version: 0.2.1
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/math:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/math
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/number:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/number
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/path:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/path
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/picomatch:
+    0.4.0:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/picomatch
+        version: 0.4.0
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/pretty-format:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/pretty-format
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/chalk:
+        - 0.2.1
+        - chalk
+        wally#jsdotlua/jest-get-type:
+        - 3.6.1-rc.2
+        - jest-get-type
+        wally#jsdotlua/jest-roblox-shared:
+        - 3.6.1-rc.2
+        - jest-roblox-shared
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/luau-regexp:
+        - 0.2.1
+        - luau-regexp
+        wally#jsdotlua/react-is:
+        - 17.1.0
+        - react-is
+      realm: shared
+  wally#jsdotlua/promise:
+    3.5.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/promise
+        version: 3.5.2
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/react-is:
+    17.1.0:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/react-is
+        version: 17.1.0
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/shared:
+        - 17.1.0
+        - shared
+      realm: shared
+  wally#jsdotlua/shared:
+    17.1.0:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/shared
+        version: 17.1.0
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+      realm: shared
+  wally#jsdotlua/string:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/string
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/es7-types:
+        - 1.2.6
+        - es7-types
+        wally#jsdotlua/number:
+        - 1.2.6
+        - number
+      realm: shared
+  wally#jsdotlua/symbol-luau:
+    1.0.1:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/symbol-luau
+        version: 1.0.1
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#jsdotlua/throat:
+    3.6.1-rc.2:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/throat
+        version: 3.6.1-rc.2
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/luau-polyfill:
+        - 1.2.6
+        - luau-polyfill
+        wally#jsdotlua/promise:
+        - 3.5.2
+        - promise
+      realm: shared
+  wally#jsdotlua/timers:
+    1.2.6:
+      pkg_ref:
+        type: wally
+        name: wally#jsdotlua/timers
+        version: 1.2.6
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#jsdotlua/collections:
+        - 1.2.6
+        - collections
+      realm: shared

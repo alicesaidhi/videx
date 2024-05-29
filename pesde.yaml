@@ -1,0 +1,30 @@
+name: alicesaidhi/videx
+version: 0.1.0
+description: Extra utilities for vide to expand on it's initial capabilities.
+license: MIT
+authors:
+- alicesaidhi
+exports: {}
+path_style: !roblox
+  place: {}
+private: false
+realm: shared
+indices:
+  default: https://github.com/daimond113/pesde-index
+sourcemap_generator: rojo sourcemap -o sourcemap.json
+dependencies:
+  jest_globals:
+    wally: wally#jsdotlua/jest-globals
+    version: ^3.6.1-rc.2
+    index_url: https://github.com/UpliftGames/wally-index
+    realm: development
+  jest:
+    wally: wally#jsdotlua/jest
+    version: ^3.6.1-rc.2
+    index_url: https://github.com/UpliftGames/wally-index
+    realm: development
+  vide:
+    wally: wally#centau/vide
+    version: ^0.2.0
+    index_url: https://github.com/UpliftGames/wally-index
+    realm: shared
