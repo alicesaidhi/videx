@@ -1,5 +1,0 @@
-roots = ["ReplicatedStorage/packages/videx"]
-
-[config]
-verbose = true
-testPathPatternIgnore = ["dev_packages"]

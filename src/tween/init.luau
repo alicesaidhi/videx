@@ -1,98 +1,40 @@
 local vide = require(script.Parent.Parent.vide)
-local defer = require(script.Parent.defer)
-local timeline = require(script.Parent.timeline)
+local types = require(script.Parent.types)
 local get_value = require(script.get_value)
 local easing_styles = require(script.easings)
+local root_timeline = require(script.Parent.root_timeline)
 
 local source = vide.source
 local derive = vide.derive
 local action = vide.action
 local cleanup = vide.cleanup
 local untrack = vide.untrack
+local effect = vide.effect
 local read = vide.read
 
 type source<T> = vide.Source<T>
 type canbe<T> = (() -> T) | T
-type tweenable = timeline.tweenable
-type node = timeline.node
-type tween_node = {
+type tweenable = types.tweenable
+type timeline_node = types.timeline_node
+type tween = types.tween
+type tween_node = types.tween_node
+type ease_style = types.ease_style
 
-	previous_node: tween_node,
-	next_node: tween_node,
-	root: {_headtween: tween_node},
+local function remove_node_tl_node(node: types.timeline_node)
+	if node.next_node then
+		node.next_node.previous_node = node.previous_node
+	end
 
-	instance: Instance,
-	key: string,
-	start: unknown,
-	goal: unknown,
+	if node.previous_node then
+		node.previous_node.next_node = node.next_node
+	end
 
-	stagger: canbe<number>,
+	if node.root._head == node then
+		node.root._head = node.next_node
+	end
 
-}
-type action = typeof(vide.action(function() end))
-type tween = {
-
-	timer: source<number>,
-	duration_cycle: source<number>,
-	redo: source<number>,
-	delay: source<number>,
-	yoyo: source<boolean>,
-	timescale: source<number>,
-	redo_delay: source<number>,
-	stagger: {
-		amount: source<number>,
-		ease: easing_style | (x: number) -> number,
-	} | {
-		each: source<number>,
-		ease: easing_style | (x: number) -> number,
-	},
-
-	ease: easing_style | (x: number) -> number,
-
-	alpha: () -> number,
-	duration: () -> number,
-
-	_parent: node | false,
-	_headtween: tween_node | false,
-
-	to: (tween, to: unknown, stagger: canbe<number>?) -> {[string]: action},
-	from: (tween, from: unknown, stagger: canbe<number>?) -> {[string]: action},
-	fromto: (tween, from: unknown, to: unknown, stagger: canbe<number>?) -> {[string]: action},
-
-	play: (tween) -> (),
-	stop: (tween) -> (),
-	seek: (tween, at: number) -> ()
-
-}
-type stagger = {
-
-	amount: number?,
-	each: number?,
-	ease: easing_style | (x: number) -> number,
-
-}
-
-type easing_style = easing_styles.ease_style
-
-export type properties = {
-
-	duration: number?,
-	ease: easing_style?,
-	redo: number?,
-	delay: number?,
-	yoyo: boolean?,
-	timescale: number?,
-	redo_delay: number?,
-
-	stagger: {
-
-		amount: number?,
-		each: number?,
-		ease: (easing_style | (x: number) -> number)?,
-	
-	}?
-	
-}
+	node.tween._parent = false
+end
 
 
 local function remove_node(node: tween_node)
@@ -113,8 +55,10 @@ local function readu<T>(input: (() -> T) | T)
 	return if type(input) == "function" then untrack(input) else input
 end
 
-local function create_tween(props: properties)
+local function create_tween(props: types.tween_properties)
+	local ROOT_TIMELINE = root_timeline.root
 
+	local reversing = source(false)
 	local update_children = source()
 	local tween = {
 
@@ -196,6 +140,7 @@ local function create_tween(props: properties)
 			current_time = leftover_time - redo_delay
 		end
 
+
 		return math.clamp(current_time, 0, duration)
 	end
 	
@@ -203,11 +148,14 @@ local function create_tween(props: properties)
 		return get_time(tween.timer()) / tween.duration_cycle()
 	end
 
-	defer(function()
-		local max_stagger = untrack(max_stagger)
+	effect(function()
+		local max_stagger = if untrack(max_stagger) == 0 then 1 else untrack(max_stagger)
 		local timer = tween.timer()
 		local amount = tween.stagger.amount
-		local each = read(tween.stagger.each) or read(amount) / max_stagger
+		local each = read(tween.stagger.each) or (read(amount) and read(amount) / max_stagger) or 1
+
+		if reversing() then timer = tween.duration() - timer end
+
 		local node: false | tween_node = tween._headtween
 
 		local stagger_ease = tween.stagger.ease
@@ -307,24 +255,55 @@ local function create_tween(props: properties)
 
 	end
 
-	function tween:play()
-		timeline.ROOT:add(tween)
+	function tween:reverse()
+		local duration = self.duration()
+		local time_passed = if not reversing() then duration - self.timer() else self.timer()
+		local root_time_passed = ROOT_TIMELINE.timer()
+
+		reversing(true)
+		ROOT_TIMELINE:add(self, root_time_passed - time_passed)
 	end
 
-	function tween:stop()
-		timeline.remove_node(tween._parent)
+	function tween:play()
+		local duration = self.duration()
+		local time_passed = if reversing() then duration - self.timer() else self.timer()
+		local root_time_passed = ROOT_TIMELINE.timer()
+
+		reversing(false)
+		ROOT_TIMELINE:add(self, root_time_passed - time_passed)
+	end
+
+	function tween:resume()
+		local time_passed = self.timer()
+		local root_time_passed = ROOT_TIMELINE.timer()
+
+		ROOT_TIMELINE:add(self, root_time_passed - time_passed)
+	end
+
+	function tween:pause()
+		if self._parent == false then return end
+		remove_node_tl_node(self._parent)
+	end
+
+	function tween:restart()
+		reversing(false)
+		ROOT_TIMELINE:add(self)
 	end
 
 	function tween:seek(new: number)
-		if not tween._parent then
-			timeline.ROOT:add(tween)
+		if reversing() then new = self.duration() - new end
+		if self._parent ~= false then
+			ROOT_TIMELINE:add(self, ROOT_TIMELINE.timer() - new)
+		else
+			self.timer(new)
 		end
-
-		assert(tween._parent)
-
-		local root: typeof(timeline.ROOT) = tween._parent.root
-		root:add(tween, -new)
 	end
+
+	function tween:progress(new: number)
+		self:seek(self.duration() * new)
+	end
+
+	tween:play()
 
 	return tween
 

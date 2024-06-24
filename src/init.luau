@@ -1,7 +1,9 @@
+
+local timeline = require(script.timeline)
 local vide = require(script.Parent.vide)
 local oklab = require(script.oklab)
-local srgb = require(script.srgb)
 local step = require(script.step)
+
 
 export type Source<T> = vide.Source<T>
 export type Can<T> = T | () -> T
@@ -12,15 +14,11 @@ local videx = {
 	store = require(script.store).new,
 	null = require(script.store).null,
 
-	defer = require(script.defer),
-	lazy = require(script.lazy),
-
 	boundary = require(script.boundary),
 
 	context = require(script.context),
 	
 	oklab = oklab,
-	srgb = srgb,
 
 	step = function(dt: number)
 		if connection then

@@ -153,14 +153,6 @@ local function bounce_inout(x: number)
 	return if x < 0.5 then (1 - bounce_out(1 - 2 * x)) / 2 else (1 + bounce_out(2 * x - 1)) / 2
 end
 
-
-type ease_in = "sine.in" | "cubic.in" | "quad.in" | "quart.in" | "quint.in" | "exponential.in" | "circular.in" | "back.in" | "elastic.in" | "bounce.in"
-type ease_out = "sine.out" | "cubic.out" | "quad.out" | "quart.out" | "quint.out" | "exponential.out" | "circular.out" | "back.out" | "elastic.out" | "bounce.out"
-type ease_inout = "sine.inout" | "cubic.inout" | "quad.inout" | "quart.inout" | "quint.inout" | "exponential.inout" | "circular.inout" | "back.inout" | "elastic.inout" | "bounce.inout"
-type ease_outin = "sine.outin" | "cubic.outin" | "quad.outin" | "quart.outin" | "quint.outin" | "exponential.outin" | "circular.outin" | "back.outin" | "elastic.outin" | "bounce.outin"
-
-export type ease_style = "linear" | ease_in | ease_out | ease_inout | ease_outin | string
-
 local function generate_step(steps: number)
 	steps += 1
 	local step_size = 1 / steps

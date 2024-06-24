@@ -22,11 +22,11 @@ the key that is accessed is changed.
 ]=]
 function Store.new<T, U>(
     initial_state: T & {},
-    mutations: (T) -> U
+    mutations: (T & U) -> U
 ): T & U
     local sources = {}
 
-    for i, v in next, initial_state do
+    for i, v in initial_state :: any do
         local src = source(v ~= NULL and v or nil)
         sources[i] = src
     end
@@ -44,13 +44,6 @@ function Store.new<T, U>(
 
     local external_proxy = {}
 
-    for i, v in next, mutations(internal_proxy :: any) :: any do
-        if external_proxy[i] then
-            error(`duplicate field "{i}"`, 2)
-        end
-        external_proxy[i] = v
-    end
-
     setmetatable(external_proxy :: any, {
         __index = function(_, index)
             local src = sources[index]
@@ -62,6 +55,13 @@ function Store.new<T, U>(
             sources[index](value)
         end
     })
+
+    for i, v in next, mutations(internal_proxy :: any) :: any do
+        if rawget(external_proxy, i) then
+            error(`duplicate field "{i}"`, 2)
+        end
+        rawset(external_proxy, i, v)
+    end
 
     return external_proxy :: T & U & {}
 end
